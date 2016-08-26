@@ -1,0 +1,26 @@
+.site-content-wrapper {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	transition: left .4s cubic-bezier(0.4, 0, 0.2, 1);
+
+	&.offset {
+		left: $navbar-small;
+	}
+}
+
+@include on-medium-screen {
+	.site-content-wrapper {
+		&.offset {
+			left: $navbar-medium;
+		}
+	}
+}
+
+@include on-large-screen {
+	.site-content-wrapper {
+		&.offset {
+			left: 0;
+		}
+	}
+}

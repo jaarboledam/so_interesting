@@ -1,0 +1,11 @@
+@mixin on-medium-screen {
+  @media screen and (min-width: 40em) {
+    @content;
+  }
+}
+
+@mixin on-large-screen {
+  @media screen and (min-width: 64em) {
+    @content;
+  }
+}

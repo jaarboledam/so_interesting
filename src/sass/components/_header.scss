@@ -1,0 +1,115 @@
+.site-bar-wrapper {
+  height: $small-bar;
+  padding: 0 5px;
+  position: fixed;
+  width: 100%;
+  background-color: $black;
+  transition: height .4s ease;
+
+  .site-topbar {
+    height: inherit;
+
+    &-logo {
+      height: inherit;
+      font-family: 'Qwigley', cursive;
+      font-size: 2.5rem;
+      color: $white;
+      text-align: center;
+      transition: all .4s ease;
+    }
+
+    .icon {
+      display: inline-block;
+      height: $small-bar;
+      line-height: $small-bar;
+      font-size: 2rem;
+      color: $smoke;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+
+      &:hover, &.active {
+        color: $accent;
+      }
+
+      &.icon-menu {
+        left: 10px;
+      }
+
+      &.icon-search {
+        right: 10px;
+      }
+    }
+
+    &-searchbox {
+      display: none;
+      position: absolute;
+      background-color: $black;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+}
+
+@include on-medium-screen {
+  .site-bar-wrapper {
+    height: $large-bar;
+
+    .site-topbar { 
+      &-logo {
+        font-size: 3.5rem;
+      }
+
+      .icon {
+        height: $large-bar;
+        line-height: $large-bar;
+        font-size: 2.5rem;
+
+        &.icon-menu {
+          left: 15px;
+        }
+
+        &.icon-search {
+          right: 15px;
+        }
+      }
+    }
+  }
+}
+
+@include on-large-screen {
+  .site-bar-wrapper {
+    .site-topbar {
+      &-logo {
+        text-align: left;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .icon {
+        &.icon-menu {
+          display: none;
+        }
+
+        &.icon-search {
+          right: 200px;
+        }
+      }
+    }
+
+    &.fixed-topbar {
+      height: 60px;
+      .site-topbar {
+        &-logo {
+          font-size: 2.5rem;
+        }
+
+        .icon {
+          height: 60px;
+          line-height: 60px;
+        }
+      }
+    }
+  }
+}

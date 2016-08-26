@@ -1,0 +1,105 @@
+.site-navbar {
+  position: fixed;
+  top: 0; 
+  left: -$navbar-medium;
+  height: 100vh;
+  width: $navbar-small;
+  background-color: $black;
+  transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-visible {
+    left: 0;
+  }
+
+  &-header {
+    height: $small-bar;
+    line-height: $small-bar;
+    text-align: center;
+    padding: 0 5px;
+
+    #sign-up-button {
+      margin-bottom: 0;
+      width: 90%;
+    }
+  }
+
+  &-menu {
+    .navbar-menu-item {
+      transition: all .4s ease;
+
+      &.active, &:hover {
+        background-color: $accent;
+      }
+
+      a {
+        display: block;
+        padding: 10px;
+        color: $smoke;
+        overflow: auto;
+        text-overflow: ellipsis;
+        transition: all .4s ease;
+      }
+    }
+  }
+} 
+
+@include on-medium-screen {
+  .site-navbar {
+    width: $navbar-medium;
+
+    &-header {
+      height: $large-bar;
+      line-height: $large-bar;
+
+      #sign-up-button {
+        font-size: 1.25rem;
+      }
+    }
+
+    &-menu {
+      .navbar-menu-item a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@include on-large-screen {
+  .site-navbar {
+    left: auto!important;
+    right: 0;
+    height: auto;
+    width: 100%;
+
+    &-header {
+      padding: 0 20px;
+      text-align: right;
+
+      #sign-up-button {
+        font-size: 1rem;
+        margin-bottom: 0;
+        width: auto;
+      }
+    }
+
+    &-menu {
+      text-align: center;
+
+      .navbar-menu-item {
+        display: inline-block;
+
+        &.active, &:hover {
+          background-color: $accent;
+        }
+
+        a {
+          display: block;
+          padding: 10px;
+          color: $smoke;
+          overflow: auto;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
