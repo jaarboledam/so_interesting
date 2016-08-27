@@ -1,6 +1,5 @@
 .site-bar-wrapper {
   height: $small-bar;
-  padding: 0 5px;
   position: fixed;
   width: 100%;
   background-color: $black;
@@ -46,8 +45,14 @@
       display: none;
       position: absolute;
       background-color: $black;
+      padding: 15px;
       width: 100%;
       z-index: 2;
+      transition: all .4s ease;
+
+      #txt-search {
+        margin: 0;
+      }
     }
   }
 }
@@ -96,18 +101,28 @@
           right: 200px;
         }
       }
+
+      &-searchbox {
+        right: 250px;
+        width: 300px;
+      }
     }
 
     &.fixed-topbar {
       height: 60px;
       .site-topbar {
         &-logo {
-          font-size: 2.5rem;
+          display: none;
         }
 
         .icon {
           height: 60px;
           line-height: 60px;
+        }
+
+        &-searchbox {
+          right: 200px;
+          top: 60px;
         }
       }
     }
