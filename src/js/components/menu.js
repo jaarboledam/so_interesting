@@ -1,5 +1,3 @@
-import {foo} from './responsive.util';
-
 !function ($) {
   var $wrapper   = $('.site-bar-wrapper');
   var $topbar    = $('.site-topbar');
@@ -22,9 +20,15 @@ import {foo} from './responsive.util';
   }
 
   function showSearchbox () {
-    /*$searchbox.show();
-
-    Foundation.Motion.animateIn($searchbox.children('#txt-search'), 'fade-in');*/
+    if ($searchbox.hasClass('visible')) {
+      Foundation.Motion.animateOut($searchbox, 'fade-out', function () {
+        $(this).removeClass('visible');
+      });
+    } else {
+      Foundation.Motion.animateIn($searchbox, 'fade-in', function () {
+        $(this).addClass('visible');
+      });
+    }
   }
 
   function scrollHandler () {

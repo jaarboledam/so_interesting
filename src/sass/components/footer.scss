@@ -1,0 +1,15 @@
+.site-footer {
+	background-color: $black;
+
+	&-logo {
+	  font-family: 'Qwigley', cursive;
+	  font-size: 2.5rem;
+	  color: $white;
+	  display: inline-block;
+	  transition: all .4s ease;
+	}
+
+	.go-top {
+		padding: 15px;
+	}
+}
