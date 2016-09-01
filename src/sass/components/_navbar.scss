@@ -24,6 +24,8 @@
   }
 
   &-menu {
+    line-height: 0;
+
     .navbar-menu-item {
       transition: all .4s ease;
 
@@ -32,10 +34,11 @@
       }
 
       a {
+        line-height: $small-bar;
         display: block;
-        padding: 10px;
+        padding: 0 15px;
         color: $smoke;
-        overflow: auto;
+        overflow: hidden;
         text-overflow: ellipsis;
         transition: all .4s ease;
       }
@@ -93,8 +96,9 @@
         }
 
         a {
+          line-height: $small-bar;
           display: block;
-          padding: 10px;
+          padding: 0 10px;
           color: $smoke;
           overflow: auto;
           text-overflow: ellipsis;

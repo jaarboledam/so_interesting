@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>So Interesting!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="../dist/assets/css/app.min.css">
+</head>
+<body>
+
+  <div class="site-content-wrapper">
+    <header class="site-bar-wrapper">
+      <div class="site-topbar">
+        <span class="icon icon-menu" id="menuButton"></span>
+        <div class="site-topbar-logo">So Interesting!</div>
+        <div class="site-topbar-searchbox">
+          <input type="text" name="txt-search" id="txt-search" placeholder="Buscar...">
+        </div>
+        <span class="icon icon-search" id="searchButton"></span>
+      </div>
+      
+      <nav class="site-navbar">
+        <div class="site-navbar-header">
+          <a href="#" class="button" id="sign-up-button">Sign in / Sign up</a>
+        </div>
+
+        <ul class="site-navbar-menu no-bullet">
+          <li class="navbar-menu-item"><a href="#">CSS</a>
+          <li class="navbar-menu-item"><a href="#">HTML</a>
+          <li class="navbar-menu-item active"><a href="#">JavaScript</a>
+          <li class="navbar-menu-item"><a href="#">Web Design</a>
+          <li class="navbar-menu-item"><a href="#">RWD</a>
+          <li class="navbar-menu-item"><a href="#">UX</a>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="site-content row small-up-1">
+      <article class="article">
+        <div class="article-avatar float-left">
+          <img class="avatar-img" src="../dist/assets/img/john_doe.png">
+        </div>
+        <div class="article-data">
+          <span class="article-author">John Doe</span>
+          <div class="article-date"><span class="icon icon-clock"></span><span id="post-date">yesterday</span></div>
+        </div>
+        <h2 class="article-title">Smart Responsive Design Patterns, Or When Off-Canvas Isn’t Good Enough</h2><hr>
+        <div class="article-img">
+          <img src="../dist/assets/img/rwd-sm.png" 
+               srcset="../dist/assets/img/rwd-lg.png 800w, ../dist/assets/img/rwd-md.png 640w, ../dist/assets/img/rwd-sm.png 320w">
+        </div>
+        <div class="article-content">
+          <p class="article-content-intro article-content-paragraph">
+            Design patterns often have a bad reputation. They are often considered to be quick, lazy, off-the-shelf solutions that are applied blindly without consideration of the context of a problem. Solutions such as the almighty off-canvas navigation, the floating label pattern or carousels for featured products are some of the prominent ones.
+          </p>
+          <p class="article-content-paragraph">
+            This article isn’t about these patterns, though. This article features some of the slightly more obscure design patterns, such as responsive car-builder interfaces, mega dropdown navigation, content grids, maps and charts, as well as responsive art direction. Please note that this article isn’t technical; it explores interesting UX patterns out in the wild, rather than code samples. Beware: You will not be able to unsee what you are about to see, and that’s probably a good thing.
+          </p>
+          <p class="article-content-paragraph">
+            In general, when we design responsive websites today, in practice it makes more sense to move away from designing standalone pages towards designing flexible and sophisticated design systems. So, we focus on the components first, and then combine them to build larger components that eventually make up a page. It’s easier to comprehend the complexity of multi-screen experiences this way. But even then, we tend to see responsive design merely as a collection of slightly differently sized rectangles, with a slightly different layout, sometimes with slightly different content poured into them.
+          </p>
+          <h3 class="article-content-subtitle">Responsive Complexity Graph</h3><hr>
+          <p class="article-content-paragraph">
+            I think it’s more accurate to envision responsive design as a complicated graph with dozens of dimensions, including typography, layout, accessibility, navigation and performance (to name just a few). So, every single time we make a design decision, we are trying to plot just the right dot in just the right place across all of these dimensions to ensure that we create a resilient system that can appropriately scale up and down according to the user’s settings — and according to our intent. From this perspective, crafting responsive websites appears to be a slightly more daunting and fragile exercise, doesn’t it?
+          </p>
+          <p class="article-content-paragraph">
+            Actually, it really is a more daunting and fragile exercise, and this is why we keep going back and forth reconsidering our design and development decisions, trying to find better matches across all of the dimensions on the graph. And it’s also why design patterns can be very helpful: They reroute our decisions when we reach dead ends and simply don’t know what to do next; they help us save time by enabling us to iterate on solutions that have already proved to be helpful. It doesn’t mean that we apply the same patterns one to one in every project, but we could take them, review them and build on top of them, depending on the context. That’s where design patterns can be immensely valuable.
+          </p>
+          <p class="article-content-paragraph">
+            In this article, we’ll take a close look at five responsive design patterns, ranging from a car configurator to maps and infographics. Fasten your seatbelt: it’s going to be quite a journey.
+          </p>
+          <h3 class="article-content-subtitle">Responsive Car-Builder Interface</h3><hr>
+          <p class="article-content-paragraph">
+            Let’s imagine you get a call from a respectable and sizeable company that has a respectable and sizeable task for its website. As it turns out, a new feature had to be rolled out, you know, yesterday, and a big new announcement is coming up in a few weeks. The timing works for you, and the budget isn’t too shabby either.
+          </p>
+          <p class="article-content-paragraph">
+            Now, what if that company was BMW and you had to build a responsive car configurator that would allow users to build and purchase a car of their choice? You’d need to build in a selection of the car line, the interior and exterior, gears, a 360-degree view of the car, as well as a comparison view — for example, if a user wants to compare two cars at the same time. Obviously, the interface has to be responsive, too. Time is running out, so how would you approach this task?
+          </p>
+        </div>
+        <div class="article-comments">
+          <a name="comments">
+            <h2 class="article-title">Comments...</h2>
+          </a>
+
+          <!-- Espacio para comentarios -->
+
+          <form id="frmComment" novalidate>
+            <div class="form-group">
+              <input type="text" id="txtName" placeholder="Your name*" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="txtLastName" placeholder="Your lastname*" required>
+            </div>
+            <div class="form-group">
+              <textarea id="txtComment" cols="30" rows="5" placeholder="Write your comment*"></textarea>
+            </div>
+          </form>
+        </div>
+      </article>
+    </section>
+
+    <footer class="site-footer clearfix">
+      <div class="site-footer-logo float-left">So Interesting!</div>
+      <a href="#" class="go-top float-right do-scroll" data-scroll-to="0">Ir arriba</a>
+    </footer>
+  </div>
+
+  <script src="../dist/libs/js/jquery.min.js"></script>
+  <script src="../dist/libs/js/foundation.min.js"></script>
+  <script src="../dist/assets/js/app.min.js"></script>
+
+</body>
+</html>

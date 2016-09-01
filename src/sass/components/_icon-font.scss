@@ -29,6 +29,11 @@
     content: $icon-comment;
   }
 }
+.icon-clock {
+  &:before {
+    content: $icon-clock;
+  }
+}
 .icon-like {
   &:before {
     content: $icon-like;
@@ -44,3 +49,4 @@
     content: $icon-menu;
   }
 }
+

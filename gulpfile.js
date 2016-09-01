@@ -50,10 +50,16 @@ gulp.task('build-js', function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['server', 'build'], function () {
+gulp.task('image-optimization', function () {
+  return gulp.src('dist/assets/img/*.*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/assets/img/'));
+});
+
+gulp.task('default', ['server', 'build', 'image-optimization'], function () {
   gulp.watch('src/**/*.{css,scss}', ['build-css']);
   gulp.watch('src/**/*.js', ['build-js']);
-  gulp.watch('*.html').on('change', browserSync.reload);
+  gulp.watch('**/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('build', ['build-css', 'build-js']);
