@@ -83,8 +83,11 @@
 			}
 
 			.icon {
-				color: $accent;
 				cursor: pointer;
+			}
+
+			.liked {
+				color: $accent;
 			}
 		}
 	}
