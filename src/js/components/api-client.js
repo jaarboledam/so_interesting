@@ -1,21 +1,31 @@
 var api = {
   comments: {
     get: function (article_id, callback) {
-      $.get(`/api/${article_id}/comments/`)
-        .done(function (data) {
-          if (callback)
-            callback(data);
-        })
-        .fail(function (err) {
-          if (callback)
-            callback(`{error: ${err}}`);
-        });
+      $.get({
+        url: `/api/${article_id}`,
+        processData: false,
+        contentType: false
+      })
+      .done(function (data) {
+        if (callback)
+          callback(data);
+      })
+      .fail(function (err) {
+        if (callback)
+          callback(`{error: ${err}}`);
+      });
     },
     post: function (article_id, data, callback) {
+      var formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("lastname", data.lastname);
+      formData.append("comment", data.comment);
+
       $.post({
-        url: `/api/${article_id}/comments/`,
-        data: data,
-        contentType: "application/json; charset=utf-8",
+        url: `/api/${article_id}`,
+        data: formData,
+        processData: false,
+        contentType: false
       })
       .done(function (data) {
         if (callback)
@@ -28,7 +38,7 @@ var api = {
     }
   },
   likes: {
-    get: function (article_id, callback) {
+    get: function (callback) {
       try {
         var likes    = localStorage.getItem('soInterestingArticlelikes');
         var likesObj = likes ? $.parseJSON(likes) : {};
@@ -43,8 +53,8 @@ var api = {
     post: function (article_id, data, callback) {
       if (window.localStorage) {
         try {
-          this.get(article_id, function (obj) {
-            obj[article_id] = data || '';
+          this.get(function (obj) {
+            obj[article_id] = data || article_id;
 
             localStorage.setItem('soInterestingArticlelikes', JSON.stringify(obj));
             if (callback)
@@ -57,7 +67,7 @@ var api = {
       }
     },
     delete: function (article_id) {
-      this.get(article_id, function (obj) {
+      this.get(function (obj) {
         delete obj[article_id];
         localStorage.setItem('soInterestingArticlelikes', JSON.stringify(obj));
       });

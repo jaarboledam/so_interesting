@@ -63,7 +63,29 @@
 
   &-comments {
     margin-top: 25px;
+    padding-top: 25px;
     border-top: 5px solid $black;
+
+    .comment {
+      background-color: $white;
+      border: 1px solid $gray;
+      margin: 0 0 1rem;
+      padding: 1rem;
+
+      &-content {
+        color: $dark-font;
+      }
+    }
+
+    #frmComment {
+      input.has-error {
+        border: 1px solid #fa8072;
+      }
+    }
+
+    #alertMessage {
+      display: none;
+    }
   }
 
   &-likes {
@@ -100,9 +122,10 @@
     }
 
     &-comments {
-      #frmComment {
-        width: 75%;
-      }
+      margin-left: auto;
+      margin-right: auto;
+      width: 85%;
+      padding: 50px;
     }
   }
 }

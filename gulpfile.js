@@ -17,9 +17,8 @@ var browserSync = require('browser-sync').create();
 
 gulp.task('server', function () {
   browserSync.init({
-    server: './',
-    port: 8000
-    //proxy: '127.0.0.1:8000'
+    //server: './',
+    proxy: '127.0.0.1:8000'
   });
 });
 
